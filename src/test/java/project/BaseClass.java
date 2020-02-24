@@ -99,7 +99,7 @@ public class BaseClass {
         // enable more detailed HAR capture, if desired (see CaptureType for the complete list)
         proxy.enableHarCaptureTypes(CaptureType.REQUEST_CONTENT, CaptureType.RESPONSE_CONTENT);
 
-        // create a new HAR with the label "yahoo.com"
+        // create a new HAR with the label "honda-har"
         proxy.newHar("honda-har");
     }
 }
