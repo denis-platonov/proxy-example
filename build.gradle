@@ -1,0 +1,64 @@
+buildscript {
+    dependencies {
+        classpath "io.qameta.allure:allure-gradle:2.5"
+    }
+
+    repositories {
+        jcenter()
+    }
+}
+
+repositories {
+    mavenLocal()
+    jcenter()
+    mavenCentral()
+}
+
+group = 'project'
+version = '0.1'
+
+description = "Customizable Trips created by Locals at no cost!"
+
+
+apply plugin: 'java'
+apply plugin: 'io.qameta.allure'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    testCompile 'io.cucumber:gherkin:5.1.0'
+    testCompile 'io.cucumber:cucumber-core:3.0.2'
+    testCompile 'io.cucumber:cucumber-java:3.0.2'
+    testCompile 'io.cucumber:cucumber-testng:3.0.2'
+
+    testCompile 'io.qameta.allure:allure-gradle:2.3'
+    testCompile 'io.qameta.allure:allure-cucumber3-jvm:2.7.0'
+    testCompile 'org.testng:testng:6.14.3'
+
+    testCompile 'org.assertj:assertj-core:3.11.1'
+
+    compile 'io.qameta.allure:allure-rest-assured:2.8.1'
+
+    compile 'io.rest-assured:rest-assured:3.0.0'
+    compile 'org.awaitility:awaitility:3.0.0'
+
+    compile 'org.apache.logging.log4j:log4j-api:2.11.1'
+    compile 'org.apache.logging.log4j:log4j-core:2.11.1'
+    compile 'org.apache.logging.log4j:log4j-slf4j-impl:2.11.1'
+
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+
+    compile group: 'com.codeborne', name: 'selenide', version: '3.11'
+
+    compile 'net.lightbody.bmp:browsermob-core:2.1.5'
+}
+
+allure {
+    version = '2.6.0'
+    aspectjweaver = true
+}
